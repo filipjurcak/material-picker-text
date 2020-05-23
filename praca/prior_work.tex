@@ -1,0 +1,19 @@
+\chapter{Prior work}
+\label{kap:prior}
+
+As inverse rendering of a scene is difficult, previous research in the field focused either on subproblems of this problem (like inverse rendering of an object from a photo instead of a whole scene), or the research focused on estimation of a small number of properties of a scene \cite{li-inverse-rendering} \cite{sengupta-inverse-rendering} or a small number of materials \cite{material-recognition}. In the next sections, we would like to point out and highlight research that was done and is the most relevant to our problem, as it will serve as base stone for our solution.
+
+\section{Inverse rendering from a single image}
+% The quintessential example of a representation learning algorithm is the au- toencoder. An autoencoder is the combination of an encoder function that converts the input data into a different representation, and a decoder function that converts the new representation back into the original format. Autoencoders are trained to preserve as much information as possible when an input is run through the encoder and then the decoder, but are also trained to make the new representation have various nice properties. Different kinds of autoencoders aim to achieve different kinds of properties
+\textbf{TODO: Here we will summarize papers from Sengupta et al. \cite{sengupta-inverse-rendering} and Li et al. \cite{li-inverse-rendering} about supervised methods for inverse rendering of a scene from single image, which we'll hopefully use in our final solution }
+
+\section{Material Segmentation}
+Next we will look into material segmentation. This problem is especially challenging, as real-world materials have a rich texture, and the final look of the material is a combination of many scene properties like lighting, depth, normals, and so on.
+\newline
+There exists a large number of classifiers for images into classes like dogs, cats, etc like AlexNet \cite{alexnet}, VGG \cite{vgg} and GoogLeNet \cite{googlenet}. These classifiers take an input image and their output is per-class probability of the object in the image belonging to that class. Most used approach to image segmentation we found was the use of transfer learning on models pre-trained as classifiers \cite{fcn} \cite{material-recognition}. Transfer learning is method for re-using some parts of already trained model (and possibly change the output layers), and retrain only those layers that were not taken from the pre-trained model.
+\newline
+In \cite{fcn}, authors took model which was trained beforehand, removed final classification layer and used several upsampling layers to output 21 feature maps of the same size as input image. These 21 maps represented per pixel probability of the pixel belonging to 21 classes they had in the dataset, so to get the final image, they had to apply post-processing by taking per-pixel maximum over these feature maps, with index of the map that contained maximum than assigned as final value. It is worth noting that the new model was trained on the exact same dataset as the pre-trained model, so most of the transferred weights wouldn't change anyway even if you'd take the model and continue training with updating all the weights.
+\newline
+On the other hand, Bell et al. \cite{material-recognition} introduced completely new and larger dataset with 23 material categories on which they fine-tuned pre-trained model. This method 
+\newline
+Authors in both publications used well-known architectures, mentioned above, evaluated and compared results after training on all of them.

@@ -1,0 +1,9 @@
+\chapter{Dataset}
+\label{kap:dataset}
+The main goal of machine learning is to gain the ability to generalize well on new, previously unseen data, in our case real-world images. This generalization is often only possible if the testing data comes from the same distribution as the training data. This distribution is difficult to obtain, especially in computer vision and computer graphics as we usually work with real-world imagery, for which is problematic to obtain ground-truth data.
+\newline
+Our dataset is superior to other previously used datasets as it was rendered using physically based techniques. As a result, our 
+
+
+
+We started generating the dataset from $\approx$140 scenes by placing $\approx$10 virtual cameras inside every scene. Then we rendered images via V-Ray renderer\cite{V-Ray} from the viewports of those cameras to produce $\approx$1400 unique images with ground-truth data like diffuse albedo, specular albedo, normals, depth, obtained as render elements feature of V-Ray\cite{V-Ray-Render-elements}. By using this feature,
