@@ -2,16 +2,10 @@
 \addcontentsline{toc}{chapter}{Introduction} % rucne pridanie do obsahu
 \markboth{Introduction}{Introduction} % vyriesenie hlaviciek
 
-% Cieľom tejto práce je poskytnúť študentom posledného ročníka
-% bakalárskeho štúdia informatiky kostru práce v systéme LaTeX a ukážku
-% užitočných príkazov, ktoré pri písaní práce môžu potrebovať. Začneme
-% stručnou charakteristikou úvodu práce podľa smernice o záverečných
-% prácach \cite{smernica}, ktorú uvádzame ako doslovný citát.
-
-% \begin{quote}
-% Úvod je prvou komplexnou informáciou o práci, jej cieli, obsahu a štruktúre. Úvod sa vzťahuje na spracovanú tému konkrétne, obsahuje stručný a výstižný opis  problematiky, charakterizuje stav poznania alebo praxe v oblasti, ktorá je predmetom školského diela a oboznamuje s významom, cieľmi a zámermi školského diela. Autor v úvode zdôrazňuje, prečo je práca dôležitá a prečo sa rozhodol spracovať danú tému.  Úvod ako názov kapitoly sa nečísluje a jeho rozsah je spravidla 1 až 2 strany.
-% \end{quote}
-
-% V nasledujúcej kapitole nájdete ukážku členenia kapitoly na menšie časti a v kapitole \ref{kap:latex} nájdete príkazy na prácu s tabuľkami, obrázkami a matematickými výrazmi. V kapitole \ref{kap:lorem} uvádzame klasický text Lorem Ipsum a na koniec sa budeme venovať záležitostiam záveru bakalárskej práce. 
-
-There will be an introduction to what is the goal of our work and what the results look like.
+Setting material appearance is one of the most crucial steps in modeling 3D scenes and probably the most important one for creating a realistic model look. This task is often long, tedious, and requires non-trivial skill, as a lot of parameters need and can be set up for a model to look realistic after rendering. The number of parameters varies between used material models, but realistic models often need tens of correctly set up parameters.
+\newline
+As a result of this thesis, we want to ease the whole process by providing artists with a material picker tool. This tool is a deep neural network that would estimate a lot of intrinsic properties of an image, which would help us recover material from a user-specified object in an image.
+\newline
+We do so by inventing a pipeline for solving two fundamental problems in computer graphics and computer vision - inverse rendering and material segmentation, both from a single image. In addition to segmenting the input image, our method performs per-pixel estimation of the number of intrinsic scene characteristics, such as diffuse and specular albedo, surface normals, glossiness, and view vector. We use all of these inferred properties to simulate the rendering process, yielding close approximation of an input image.
+\newline
+To train all models in our pipeline, we present a new way to create a modern dataset by using advanced features of a physically-based V-Ray renderer to bridge the gap between synthetic data and real images. This is crucial, as we most often want to generalize well on real images, which is hard to achieve with synthetic images only.
