@@ -1,27 +1,15 @@
-\chapter*{Conclusion}  % chapter* je necislovana kapitola
+\chapter*{Conclusion}
 \addcontentsline{toc}{chapter}{Conclusion} % rucne pridanie do obsahu
 \markboth{Conclusion}{Conclusion} % vyriesenie hlaviciek
 
-% Na záver už len odporúčania k samotnej kapitole Záver v bakalárskej
-% práci podľa smernice \cite{smernica}: q\glqq{} V závere je potrebné v
-% stručnosti zhrnúť dosiahnuté výsledky vo vzťahu k stanoveným
-% cieľom. Rozsah záveru je minimálne dve strany. Záver ako kapitola sa
-% nečísluje.\grqq{}
-
-% Všimnite si správne písanie slovenských úvodzoviek okolo
-% predchádzajúceho citátu, ktoré sme dosiahli príkazmi \verb'\glqq' a
-% \verb'\grqq'.
-
-% V informatických prácach niekedy býva záver kratší ako dve strany, ale
-% stále by to mal byť rozumne dlhý text, v rozsahu aspoň jednej strany.
-% Okrem dosiahnutých cieľov sa zvyknú rozoberať aj otvorené problémy a
-% námety na ďalšiu prácu v oblasti.
-
-% Abstrakt, úvod a záver práce obsahujú podobné informácie. Abstrakt je
-% kratší text, ktorý má pomôcť čitateľovi sa rozhodnúť, či vôbec prácu
-% chce čítať. Úvod má umožniť zorientovať sa v práci skôr než ju začne
-% čítať a záver sumarizuje najdôležitejšie veci po tom, ako prácu
-% prečítal, môže sa teda viac zamerať na detaily a využívať pojmy
-% zavedené v práci.
-
-Results of our work and analysis of it will be summarized here, including future work proposals.
+In this thesis, we presented a method for the per-pixel estimation of material properties in the image by training deep neural networks. We demonstrated that deep neural networks are powerful learning representations that can learn useful priors, even when it comes to such unconstrained problems like inverse rendering. Our pipeline collectively estimates diffuse and specular albedo, surface normals, glossiness, view vector, and illumination, alongside per-pixel material segmentation, from a single image. These properties are then used to re-synthesize the input image from its components. We provide an implementation of our direct render function that makes this synthesis possible.
+\newline
+We acknowledge, however, that our solution is not perfect and there is a significant amount of work to be done in the future, as our method infers only a handful of scene characteristics, which is not enough for most real-life use cases. First, we believe that our results could improve dramatically if we had more data in our dataset, thus leading to better generalization across all models. Because of that, enlarging our dataset will be our foremost goal.
+\newline
+To make our tool accessible to artists, we want to create a plugin for 3ds Max as a wrapper for our trained models. By integrating our models directly into the program, the estimated properties of a user-specified object in an image would be transferred onto the 3D model created in 3ds Max, also specified by the user.
+\newline
+One of the potential improvements to our work is to predict spatially varying lighting, approach very similar to that proposed in \cite{li-inverse-rendering}. Currently, we have only one environment map per image, which is a very rough approximation of lighting in the scene. To improve this estimate, we could generate an environment map (or some less parameter dependant representation, like spherical Gaussians) at every pixel in the scene, which is doable, as we know (from V-Ray) what is the first intersection point in the scene from the camera view.
+\newline
+The next step to further simplify the process of setting material appearance is to enable texture transfer, as having good texture for the material is equally important for final material looks as setting correct values for material parameters. Previous work on texture transfer was only limited to some classes of objects \cite{texture-transfer}, which is not satisfactory for our use case. We admit that this problem is extremely challenging, but we want to try nevertheless.
+\newline
+Altogether, we are convinced that it is worth working on problems like inverse rendering and material segmentation, as it can find a large variety of applications in the real world, even beyond the computer science community.

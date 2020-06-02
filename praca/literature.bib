@@ -60,6 +60,16 @@ publisher = {Curran Associates, Inc.},
 url = {http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf}
 }
 
+@article{deeplab,
+author = {Chen, Liang-Chieh and Papandreou, George and Kokkinos, Iasonas and Murphy, Kevin and Yuille, Alan},
+year = {2016},
+month = {06},
+title = {DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs},
+volume = {PP},
+journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+doi = {10.1109/TPAMI.2017.2699184}
+}
+
 @book{pbr-book,
 author = {Pharr, Matt and Jakob, Wenzel and Humphreys, Greg},
 title = {Physically Based Rendering: From Theory to Implementation},
@@ -88,23 +98,18 @@ address = {San Francisco, CA, USA}, edition = {3rd}
   bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-@article{texture-transfer,
- author = {Wang, Tuanfeng Y. and Su, Hao and Huang, Qixing and Huang, Jingwei and Guibas, Leonidas and Mitra, Niloy J.},
- title = {Unsupervised Texture Transfer from Images to Model Collections},
- year = {2016},
- issue_date = {November 2016},
- publisher = {Association for Computing Machinery},
- address = {New York, NY, USA},
- volume = {35},
- number = {6},
- issn = {0730-0301},
- url = {https://doi.org/10.1145/2980179.2982404},
- doi = {10.1145/2980179.2982404},
- journal = {ACM Trans. Graph.},
- month = nov,
- articleno = {Article 177},
- numpages = {13},
- keywords = {appearance transfer, illumination, texture, data-driven graphics, shape analysis}
+@inproceedings{nyuv2,
+  author    = {Nathan Silberman, Derek Hoiem, Pushmeet Kohli and Rob Fergus},
+  title     = {Indoor {S}egmentation and {S}upport {I}nference from {RGBD} {I}mages},
+  booktitle = {ECCV},
+  year      = {2012}
+}
+
+@article{song2016ssc,
+  author     = {Song, Shuran and Yu, Fisher  and Zeng, Andy and Chang, Angel X and Savva, Manolis and Funkhouser, Thomas},
+  title      = {Semantic Scene Completion from a Single Depth Image},
+  journal    = {arXiv preprint arXiv:1611.08974},
+  year       = {2016},
 }
 
 @book{nielsenneural,
@@ -167,12 +172,12 @@ year = {2016}
   note = {Accessed: 02-03-2020}
 }
 
-@misc{3ds-Max,
-    author = {Autodesk},
-    title = {3ds-{M}ax},
+@misc{evermotion,
+    author = {Evermotion},
+    title = {Evermotion},
     year = 2020,
-    howpublished = {\url{https://www.autodesk.com/products/3ds-max/overview}},
-    note = {Retrieved: 02-03-2020}
+    howpublished = {\url{https://evermotion.org/}},
+    note = {Retrieved: 25-05-2020}
 }
 
 @misc{V-Ray,
@@ -189,4 +194,80 @@ year = {2016}
     year = 2020,
     howpublished = {\url{https://docs.chaosgroup.com/display/VRAY4MAX/Render+Elements}},
     note = {Retrieved: 21-04-2020}
+}
+
+@misc{V-Ray-Light-select,
+    author = {Chaos Group},
+    title = {V-{R}ay Light select},
+    year = 2020,
+    howpublished = {\url{https://docs.chaosgroup.com/display/VRAY4MAX/VRayLightSelect}},
+    note = {Retrieved: 25-05-2020}
+}
+
+@misc{suncg-lawsuit,
+    author = {Futurism},
+    title = {A startup is suing {F}acebook, {P}rinceton for stealing its {A}{I} data},
+    year = 2019,
+    howpublished = {\url{https://futurism.com/tech-suing-facebook-princeton-data}},
+    note = {Retrieved: 26-05-2020}
+}
+
+@misc{hdri-haven,
+    author = {HDRI Haven},
+    title = {HDRI {H}aven},
+    year = 2019,
+    howpublished = {\url{https://hdrihaven.com/hdris/?c=indoor}},
+    note = {Retrieved: 26-05-2020}
+}
+
+@misc{3ds-max,
+    author = {Autodesk},
+    title = {3ds {M}ax},
+    year = 2020,
+    howpublished = {\url{https://www.autodesk.com/products/3ds-max/overview}},
+    note = {Retrieved: 26-05-2020}
+}
+
+@misc{pytorch,
+    author = {PyTorch},
+    title = {Py{T}orch},
+    year = 2020,
+    howpublished = {\url{https://pytorch.org/}},
+    note = {Retrieved: 28-05-2020}
+}
+
+@InProceedings{u-net,
+  author       = "O. Ronneberger and P.Fischer and T. Brox",
+  title        = "U-{N}et: {C}onvolutional {N}etworks for {B}iomedical {I}mage {S}egmentation",
+  booktitle    = "Medical Image Computing and Computer-Assisted Intervention (MICCAI)",
+  series       = "LNCS",
+  volume       = "9351",
+  pages        = "234--241",
+  year         = "2015",
+  publisher    = "Springer",
+  note         = "(available on arXiv:1505.04597 [cs.CV])",
+  url          = "http://lmb.informatik.uni-freiburg.de/Publications/2015/RFB15a"
+}
+
+@article{adam,
+author = {Kingma, Diederik and Ba, Jimmy},
+year = {2014},
+month = {12},
+title = {Adam: {A} {M}ethod for {S}tochastic {O}ptimization},
+journal = {International Conference on Learning Representations}
+}
+
+@article{texture-transfer,
+author = {Wang, Tuanfeng Y. and Su, Hao and Huang, Qixing and Huang, Jingwei and Guibas, Leonidas and Mitra, Niloy J.},
+title = {Unsupervised {T}exture {T}ransfer from {I}mages to {M}odel {C}ollections},
+year = {2016},
+issue_date = {November 2016},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {35},
+number = {6},
+issn = {0730-0301},
+url = {https://doi.org/10.1145/2980179.2982404},
+doi = {10.1145/2980179.2982404},
+journal = {ACM Trans. Graph.},
 }

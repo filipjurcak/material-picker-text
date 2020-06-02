@@ -6,6 +6,10 @@
 \usepackage{url}
 \usepackage{babel}
 \usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{grffile}
+\usepackage{float}
+\usepackage{amsmath}
 \usetikzlibrary{positioning}
 \usepackage[hidelinks,breaklinks]{hyperref}
 \linespread{1.25} % hodnota 1.25 by mala zodpovedat 1.5 riadkovaniu
@@ -127,9 +131,7 @@ Consultant: & \mfkonzultant \\
 ~
 
 \vfill
-% {\bf Acknowledgments:} Tu môžete poďakovať školiteľovi, prípadne
-% ďalším osobám, ktoré vám s prácou nejako pomohli, poradili,
-% poskytli dáta a podobne.
+{\bf Acknowledgments:} I want to say sincere thank you to all people involved in writing this thesis, specifically to: Jaroslav Křivánek (doc. Ing., Ph.D.) who came up with the idea of this thesis but sadly passed away in early stages of writing the thesis; prof. RNDr. Roman Ďurikovič, PhD., for taking over the supervision and providing important insight into computer graphics; Petr Vévoda for his advice and day-and-night support with all kinds of questions; Matej Sládek, my friend in need; my family for giving me space and support throughout the whole process of writing; and lastly, but probably most importantly to my girlfriend Eďa for helping me to stay afloat and sane, as I would certainly not be able to finish this thesis without her support.
 
 % --- Koniec poďakovania
 
@@ -139,10 +141,9 @@ Consultant: & \mfkonzultant \\
 \newpage 
 \section*{Abstrakt}
 
+Proces nastavenia vlastností materiálu k nadobudnutiu realistického vzhľadu je zvyčajne únavný a často vyžaduje zručnosť na dolaďovanie parametrov, keďže rôzne kombinácie týchto parametrov môžu vyprodukovať rôzne materiály. Aby sme tento proces zjednodušili predstavujeme návrh riešenia pozostávajúceho z hlbokých neurónových sietí na \; \; \; segmentovanie materiálu a odhad vnútorných vlastností scény, ako difúzne a lesklé albedo, povrchové normály, lesk, pohľadový vektor a osvetlenie z jedného obrázka. Naša metóda teda poskytuje riešenie dvoch z najzákladnejších problémov počítačového videnia a počítačovej grafiky - inverzného renderovania a segmentácie materiálu. Použité siete sme trénovali na datasete vygenerovanom pomocou fyzikálne korektných techník pre zabezpečenie dobrej generalizácie na reálnych obrázkoch.
 
-Jedneho dna tu bude pekny abstrakt. Dnes nie je ten den.
-
-\paragraph*{Kľúčové slová:}
+\paragraph*{Kľúčové slová:} Hlboké učenie, inverzné renderovanie, materiálová segmentácia, strojové učenie, počítačová grafika, rozpoznávanie materiálov
 % --- Koniec Abstrakt - Slovensky
 
 
@@ -151,12 +152,10 @@ Jedneho dna tu bude pekny abstrakt. Dnes nie je ten den.
 % -------------------
 \newpage 
 \section*{Abstract}
-
-Abstract in the English language (translation of the abstract in the
-Slovak language).
+The process of setting material properties for realistic appearance is usually tiresome and often demands skill for fine-tuning the parameters, as different combinations of these parameters can produce different materials. To simplify this process, we introduce a pipeline consisting of deep neural networks to segment material and predict intrinsic scene characteristics, like diffuse and specular albedo, surface normals, glossiness, view vector, and illumination from a single image. Our pipeline thus provides solution to two of the most fundamental problems in computer vision and computer graphics - inverse rendering and material segmentation. We trained the networks on the dataset generated using physically-based techniques to ensure good generalization on real images.
 
 
-\paragraph*{Keywords:} 
+\paragraph*{Keywords:} Deep learning, inverse rendering, material segmentation, machine learning, computer graphics, material recognition
 
 % --- Koniec Abstrakt - Anglicky
 
@@ -195,7 +194,6 @@ Slovak language).
 \newpage 
 
 \listoffigures
-\listoftables
 
 % ---  Koniec Zoznamov
 
@@ -211,6 +209,8 @@ Slovak language).
 \input our_approach.tex
 
 \input dataset.tex
+
+\input architecture_design.tex
 
 \input implementation.tex
 
@@ -243,9 +243,7 @@ Slovak language).
 %Nepovinná časť prílohy obsahuje materiály, ktoré neboli zaradené priamo  do textu. Každá príloha sa začína na novej strane.
 %Zoznam príloh je súčasťou obsahu.
 %
-%\input appendixA.tex
-
-%\input appendixB.tex
+\input appendixA.tex
 
 \end{document}
 
